@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+if [ "$1" = remove ] ; then
+  set +e
+  echo "Removing s4-snapshot repositories ..."
+  rm -f /etc/apt/sources.list.d/50_q4os-s4-snapshot.list
+  set -e
+fi
