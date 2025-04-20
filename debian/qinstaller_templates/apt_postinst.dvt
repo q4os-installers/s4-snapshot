@@ -22,15 +22,15 @@ case "$1" in
         # echo "s4-snapshot seems not to be configured, going to do so ..."
         QDSTRA="$( dash /usr/share/apps/q4os_system/bin/print_qaptdistr.sh )"
         echo "Distro [$QDSTRA], adding repositories, configuring ..."
-        if [ "$QDSTRA" = "bookworm" ] ; then
+        if [ "$QDSTRA" = "trixie" ] ; then
+          echo '###s4-snapshot repositories configured' > "$REPOFL1"
+          echo 'deb https://q4os.sourceforge.io/qexarepo/s4-snapshot trixie-s4-snapshot-cn main' >> "$REPOFL1"
+        elif [ "$QDSTRA" = "bookworm" ] ; then
           echo '###s4-snapshot repositories configured' > "$REPOFL1"
           echo 'deb https://q4os.sourceforge.io/qexarepo/s4-snapshot bookworm-s4-snapshot-cn main' >> "$REPOFL1"
         elif [ "$QDSTRA" = "bullseye" ] ; then
           echo '###s4-snapshot repositories configured' > "$REPOFL1"
           echo 'deb https://q4os.sourceforge.io/qexarepo/s4-snapshot bullseye-s4-snapshot-cn main' >> "$REPOFL1"
-        elif [ "$QDSTRA" = "buster" ] ; then
-          echo '###s4-snapshot repositories configured' > "$REPOFL1"
-          echo 'deb https://q4os.sourceforge.io/qexarepo/s4-snapshot buster-s4-snapshot-cn main' >> "$REPOFL1"
         fi
       fi
 
