@@ -1,0 +1,17 @@
+Source: q4os-s4-snapshot
+Section: none
+Priority: optional
+Maintainer: Q4OS Team <devteam@q4os.org>
+Build-Depends: debhelper (>= 9~), q4os-devpack-base
+Standards-Version: 3.8.4
+
+Package: q4os-s4-snapshot
+Architecture: amd64
+Pre-Depends:
+Depends: libc6, s4-snapshot
+Recommends:
+Conflicts:
+Provides:
+Replaces:
+Breaks:
+Description: S4-snapshot for Q4OS
