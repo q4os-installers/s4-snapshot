@@ -11,7 +11,7 @@
 
 override_dh_install:
 	dh_install
-	mkdir debian/q4os-s4-snapshot
+	mkdir debian/s4snapshot-extq
 	dh_modify_debdir
 
 # override_dh_link:
