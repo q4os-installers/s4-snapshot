@@ -1,11 +1,11 @@
-Source: s4snapshot-extq
+Source: s4-snapshot-extq
 Section: none
 Priority: optional
 Maintainer: Q4OS Team <devteam@q4os.org>
 Build-Depends: debhelper (>= 9~), q4os-devpack-base
 Standards-Version: 3.8.4
 
-Package: s4snapshot-extq
+Package: s4-snapshot-extq
 Architecture: amd64
 Pre-Depends: s4-snapshot
 Depends:

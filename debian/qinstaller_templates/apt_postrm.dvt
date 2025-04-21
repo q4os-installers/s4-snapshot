@@ -3,6 +3,6 @@
 if [ "$1" = remove ] ; then
   set +e
   echo "Removing s4-snapshot repositories ..."
-  rm -f /etc/apt/sources.list.d/50_s4snapshot-extq.list
+  rm -f /etc/apt/sources.list.d/50_s4-snapshot-extq.list
   set -e
 fi

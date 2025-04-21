@@ -3,11 +3,11 @@
 TEMPLATES_DIR_0="$TEMPLATESDIR0"
 TEMPLATES_DIR="qinstaller_templates"
 
-PK_NAME="s4snapshot-extq"
+PK_NAME="s4-snapshot-extq"
 APPNAME_DESC="System4-Snapshot"
 
 #-.qsi entries
-# INST_DEBS="s4snapshot-extq"
+# INST_DEBS="s4-snapshot-extq"
 PK_VERS="1.1-a1"
 # Q4VER_MIN="4.0"
 # Q4VER_MAX="5.9999"

@@ -17,7 +17,7 @@ case "$1" in
     configure)
       set +e
 
-      REPOFL1="/etc/apt/sources.list.d/50_s4snapshot-extq.list"
+      REPOFL1="/etc/apt/sources.list.d/50_s4-snapshot-extq.list"
       if [ ! -f "$REPOFL1" ] || [ -n "$( head -n1 $REPOFL1 2>/dev/null | grep '##_not_configured_yet_##' )" ] ; then
         # echo "s4-snapshot seems not to be configured, going to do so ..."
         QDSTRA="$( dash /usr/share/apps/q4os_system/bin/print_qaptdistr.sh )"
