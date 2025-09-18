@@ -1,1 +1,1 @@
-deb [trusted=yes] https://q4os.sourceforge.io/qexarepo/s4-snapshot trixie-s4-snapshot-cn main
+deb [trusted=yes signed-by=/usr/share/keyrings/q4a-q4os.gpg] https://q4os.sourceforge.io/qexarepo/s4-snapshot trixie-s4-snapshot-cn main

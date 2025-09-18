@@ -17,14 +17,27 @@ case "$1" in
     configure)
       set +e
 
-      REPOFL1="/etc/apt/sources.list.d/50_s4-snapshot-extq.list"
+
+      if [ "$QDSTRA" = "trixie" ] ; then
+        REPOFL1="/etc/apt/sources.list.d/50_s4-snapshot-extq.sources"
+      else
+        REPOFL1="/etc/apt/sources.list.d/50_s4-snapshot-extq.list"
+      fi
       if [ ! -f "$REPOFL1" ] || [ -n "$( head -n1 $REPOFL1 2>/dev/null | grep '##_not_configured_yet_##' )" ] ; then
         # echo "s4-snapshot seems not to be configured, going to do so ..."
         QDSTRA="$( dash /usr/share/apps/q4os_system/bin/print_qaptdistr.sh )"
         echo "Distro [$QDSTRA], adding repositories, configuring ..."
         if [ "$QDSTRA" = "trixie" ] ; then
-          echo '###s4-snapshot repositories configured' > "$REPOFL1"
-          echo 'deb https://q4os.sourceforge.io/qexarepo/s4-snapshot trixie-s4-snapshot-cn main' >> "$REPOFL1"
+          cat > "$REPOFL1" <<EOF
+###s4-snapshot repositories configured
+
+Enabled: yes
+Types: deb
+URIs: https://q4os.sourceforge.io/qexarepo/s4-snapshot
+Suites: trixie-s4-snapshot-cn
+Components: main
+Signed-By: /usr/share/keyrings/q4a-q4os.gpg
+EOF
         elif [ "$QDSTRA" = "bookworm" ] ; then
           echo '###s4-snapshot repositories configured' > "$REPOFL1"
           echo 'deb https://q4os.sourceforge.io/qexarepo/s4-snapshot bookworm-s4-snapshot-cn main' >> "$REPOFL1"
